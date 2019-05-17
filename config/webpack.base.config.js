@@ -14,11 +14,18 @@ module.exports = {
   module:{
   	rules:[
       {
-        test:/(\.jsx|\.js)$/,
+        test:/.js$/,
         exclude:/node_modules/,
         loader:'babel-loader',
         query: {
           presets: ['env','react'],  
+        }
+      },
+      {
+        test:/.jsx$/,
+        loader:'babel-loader',
+        query:{
+          presets:['env','react']
         }
       },
       {
