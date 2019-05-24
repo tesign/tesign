@@ -15,10 +15,14 @@
   "author": "cqupthub_CFE小组",
   "license": "MIT",
   "dependencies": {
-    "classnames": "^2.2.6",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0"
+    "ansi-regex": "^4.1.0",
+    "classnames": "2.2.6",
+    "markdown-it": "^8.4.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-markdown-it-loader": "^0.1.1",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

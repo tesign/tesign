@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from '@/index';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import './App.less';
+
 ReactDOM.render(
-	<Button type='normal' onClick = {(e)=>{alert(1)}}>
-		66		
-	</Button>,
+	<BrowserRouter>
+    	<App />
+  	</BrowserRouter>,
 	document.getElementById('app')
 )

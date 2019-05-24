@@ -26,6 +26,6 @@ module.exports = merge(baseWebpackConfig,{
     }),
     new MiniCssExtractPlugin({
         filename: 'static/css/[name].[contenthash:7].css'
-    })
+    }),
   ]
 })

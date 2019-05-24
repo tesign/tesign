@@ -16,9 +16,7 @@ class Button extends React.Component{
 		const {type,className,style,children} = this.props;
 		const btn_class = classnames('mybutton',btn_type[type],className)
 		return(
-			<span className = {btn_class} style = {style} onClick = {this.onClick}>
-				{children}
-			</span>
+			<button className = {btn_class} style = {style} onClick = {this.onClick}>{children}</button>
 		)
 	}
 	onClick(e){
