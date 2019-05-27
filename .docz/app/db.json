@@ -1,0 +1,106 @@
+{
+  "config": {
+    "title": "Tesign",
+    "description": "a lightweight component library",
+    "menu": [],
+    "version": "1.2.5",
+    "repository": "https://github.com/tesign/tesign",
+    "native": false,
+    "codeSandbox": true,
+    "themeConfig": {},
+    "separator": "-"
+  },
+  "entries": [
+    {
+      "key": "doc/Button.mdx",
+      "value": {
+        "id": "12a81d2b4d8f074eb7d598f992acfda9",
+        "filepath": "doc/Button.mdx",
+        "link": "https://github.com/tesign/tesign/edit/master/doc/Button.mdx",
+        "slug": "doc-button",
+        "route": "/doc-button",
+        "name": "Button",
+        "menu": "",
+        "headings": []
+      }
+    },
+    {
+      "key": "doc/Index.mdx",
+      "value": {
+        "name": "Hello world",
+        "id": "1145f3d6b2dece76c7fc0c98063783e4",
+        "filepath": "doc/Index.mdx",
+        "link": "https://github.com/tesign/tesign/edit/master/doc/Index.mdx",
+        "slug": "doc-index",
+        "route": "/doc-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "hello-world",
+            "depth": 1,
+            "value": "Hello world"
+          }
+        ]
+      }
+    }
+  ],
+  "props": [
+    {
+      "key": "examples/App.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "App",
+          "methods": [],
+          "actualName": "App"
+        }
+      ]
+    },
+    {
+      "key": "examples/components/Button.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "TButton",
+          "methods": [],
+          "actualName": "TButton"
+        }
+      ]
+    },
+    {
+      "key": "examples/components/Main.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Main",
+          "methods": [],
+          "actualName": "Main"
+        }
+      ]
+    },
+    {
+      "key": "src/Button/Button.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Button",
+          "methods": [
+            {
+              "name": "onClick",
+              "docblock": null,
+              "modifiers": [],
+              "params": [
+                {
+                  "name": "e",
+                  "type": null
+                }
+              ],
+              "returns": null
+            }
+          ],
+          "actualName": "Button"
+        }
+      ]
+    }
+  ]
+}

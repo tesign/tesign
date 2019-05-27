@@ -64,7 +64,7 @@ module.exports = {
 			},
 			{
 				test: /\.md$/,
-				loader: 'babel-loader!react-markdown-it-loader'
+				loader: 'babel!markdown-it-react-loader'
 			}
 		],
 	}
