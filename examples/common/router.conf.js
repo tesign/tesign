@@ -13,5 +13,9 @@ export const ROUTERS = [
     {
         link: '/Button',
         name: '按钮'
+    },
+    {
+        link: '/Table',
+        name: "表格"
     }
 ];

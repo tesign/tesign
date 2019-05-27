@@ -1,0 +1,41 @@
+.tesign-app {
+    .tesign-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 199px;
+        padding: 20px;
+        border-right: 1px solid #eee;
+        h3{
+            margin: 15px 0;
+            font-weight: 600;
+        }
+        ul {
+            margin: 10px;
+            li {
+                padding: 6px 5px;
+                a {
+                    display: block;
+                    color: #111;
+                    transition: padding .2s ease-in-out;
+                    padding-left: 0;
+                    &:hover {
+                        padding-left: 20px;
+                    }
+                    &.is-active {
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .tesign-router {
+        position: absolute;
+        top: 0;
+        left: 240px;
+        bottom: 0;
+        right: 0;
+        padding: 30px;
+    }
+}
