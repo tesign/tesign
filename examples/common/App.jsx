@@ -9,7 +9,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Router from './router';
 import {ROUTERS} from './router.conf';
-import './App.less';
+import './App.scss';
 
 
 export default class App extends React.Component {
@@ -19,7 +19,7 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div className="tesign-app">
+            <div className="tesign-app markdown-body">
                 <nav className="tesign-nav">
                     <h3>Tesign</h3>
                     <ul>

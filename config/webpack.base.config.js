@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 function resolve(dir) {
-	return path.join(__dirname, '..', dir)
+	return path.join(__dirname, dir)
 }
 module.exports = {
 	context: path.resolve(__dirname, '../'),
@@ -29,26 +29,18 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.less$/,
+				test: /\.scss$/,
 				use: [{
 					loader: "style-loader"
 				}, {
 					loader: "css-loader"
 				}, {
-					loader: "less-loader",
-					options: {
-						paths: [
-							path.resolve(__dirname, "node_modules")
-						]
-					}
+					loader: "sass-loader",
 				}]
 			},
 			{
 				test: /\.css$/,
-				use: [
-					'css-loader',
-				],
-				exclude: /node_modules/,
+				loader:['style-loader','css-loader'],
 			},
 			{
 				test: /\.(png|svg|jpg|webp|gif)$/,
@@ -57,14 +49,14 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+				test: /\.(woff2?|eot|ttf|otf|woff)(\?.*)?$/,
 				use: [
 					'file-loader'
 				]
 			},
 			{
 				test: /\.md$/,
-				loader: 'babel!markdown-it-react-loader'
+				loader:['babel-loader','react-markdown-loader']
 			}
 		],
 	}
