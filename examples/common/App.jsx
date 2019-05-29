@@ -25,7 +25,7 @@ export default class App extends React.Component {
                     <ul>
                         {
                             ROUTERS.map(link => {
-                                return (<li><NavLink activeClassName='is-active' to={link.link}>{link.name}</NavLink></li>)
+                                return (<li key = {link.link} ><NavLink activeClassName='is-active' to={link.link}>{link.name}</NavLink></li>)
                             })
                         }
                     </ul>

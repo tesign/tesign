@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 function resolve(dir) {
-	return path.join(__dirname, dir)
+	return path.join(__dirname,'..',dir)
 }
 module.exports = {
 	context: path.resolve(__dirname, '../'),
@@ -10,6 +10,7 @@ module.exports = {
 		extensions: ['.js', '.jsx', '.json'],
 		alias: {
 			'@': resolve('src'),
+			'Doc':resolve('doc'),
 		}
 	},
 	module: {

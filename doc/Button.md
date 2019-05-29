@@ -1,6 +1,6 @@
 ---
 imports:
-  '{ Button }': '../src/index.js'
+  '{ Button }': '@/Button/Button.jsx'
 ---
 
 ~~~
@@ -13,5 +13,5 @@ imports:
 ~~~
 
 ```render html
-<Button type='normal'>666</Button>
+<Button type='normal'>6666</Button>
 ```

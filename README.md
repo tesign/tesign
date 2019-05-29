@@ -1,5 +1,7 @@
 ## tesign
 
+自动化构建思路，再examples 的components目录下负责引用对应文档，文档在doc里,
+
 预计支持组件
 
 + Button 按钮
