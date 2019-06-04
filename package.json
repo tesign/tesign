@@ -4,11 +4,10 @@
   "description": "a lightweight component library",
   "main": "build/main.js",
   "scripts": {
+    "examples" :"webpack-dev-server --progress --colors  --mode development --config config/webpack.examples.config.js",
     "dev": "webpack-dev-server --progress --colors  --mode development --config config/webpack.dev.config.js",
     "build": "webpack -p --mode production --config config/webpack.prod.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

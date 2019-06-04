@@ -4,12 +4,12 @@
  * @author yupeng
  * @created: 2019/05/25
  */
+
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import {ROUTERS} from './router.conf';
+import {ROUTERS} from '_/common/router.conf'
 import Loadable from 'react-loadable';
-import Loading from './loading.jsx';
-import Button from 'Doc/Button.md'
+import Loading from '../../common/loading.jsx';
 export default class Router extends React.Component {
     constructor(props){
         super(props);
@@ -18,15 +18,15 @@ export default class Router extends React.Component {
     renderRouter(){
         return (
             <Switch>
-                {
+                 {
                     ROUTERS.map((item)=>{
                         return <Route exact={item.link=='/'} path={item.link} 
                                 component = {item.road?Loadable({
-                                    loader:()=>import(`${item.road}`),
+                                    loader:()=>import('../components/' + item.road),
                                     loading:Loading
                                 }):''}/>
                     })
-                }    
+                }  
             </Switch>
         )
     }

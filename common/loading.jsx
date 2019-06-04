@@ -6,7 +6,7 @@ export default class Loading extends React.Component{
   render(){
     return (
         <div>
-          666
+          66612312
         </div>
     )
   }

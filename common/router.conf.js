@@ -14,11 +14,11 @@ export const ROUTERS = [
     {
         link: '/Button',
         name: '按钮',
-        road:'Doc/Button.md',
+        road:'Button',
     },
     {
         link: '/Table',
         name: "表格",
-        road:'',
+        road:'Pullup',
     }
 ];

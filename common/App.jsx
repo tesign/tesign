@@ -7,10 +7,9 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Router from './router';
-import {ROUTERS} from './router.conf';
+import {ROUTERS} from './router.conf'
+import './reset.scss'
 import './App.scss';
-
 
 export default class App extends React.Component {
     constructor(props){
@@ -18,6 +17,7 @@ export default class App extends React.Component {
     }
 
     render() {
+        const {Router} = this.props
         return (
             <div className="tesign-app markdown-body">
                 <nav className="tesign-nav">

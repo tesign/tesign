@@ -1,6 +1,8 @@
 ## tesign
 
 自动化构建思路，再examples 的components目录下负责引用对应文档，文档在doc里,
+doc 也即文档存放点，yarn run dev的时候会请求这里面的文档组件
+example 也即测试存放点, yarn run examples的时候回请求这里面的组件，他们的区别只是examples直接引用examples下目录的组件,并且添加数据进行调试
 
 预计支持组件
 

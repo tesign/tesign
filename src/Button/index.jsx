@@ -1,6 +1,6 @@
 //这个是基本的按钮组件
 import React from 'react';
-import './button.scss';
+import './index.scss';
 import classnames from 'classnames';
 class Button extends React.Component{
 	constructor(props){

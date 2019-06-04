@@ -7,10 +7,11 @@ function resolve(dir) {
 module.exports = {
 	context: path.resolve(__dirname, '../'),
 	resolve: {
-		extensions: ['.js', '.jsx', '.json'],
+		extensions: ['.js', '.jsx', '.json','.md','.scss'],
 		alias: {
 			'@': resolve('src'),
 			'Doc':resolve('doc'),
+			'_':resolve(''),
 		}
 	},
 	module: {

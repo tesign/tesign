@@ -7,7 +7,7 @@ const baseWebpackConfig = require('./webpack.base.config.js');
 const merge = require('webpack-merge');
 module.exports = merge(baseWebpackConfig,{
   entry: {
-    app:'./doc/index.js',
+    app:'./examples/index.js',
   },
   output: {
     filename: 'static/js/main.js',
@@ -22,7 +22,7 @@ module.exports = merge(baseWebpackConfig,{
     // new BundleAnalyzerPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './doc/index.html'
+      template: './examples/index.html'
     }),
     new MiniCssExtractPlugin({
         filename: 'static/css/[name].[contenthash:7].css'

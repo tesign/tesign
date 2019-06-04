@@ -1,6 +1,6 @@
 ---
 imports:
-  '{ Button }': '@/Button/Button.jsx'
+  '{ Button }': '@/Button'
 ---
 
 ~~~
