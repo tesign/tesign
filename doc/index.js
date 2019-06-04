@@ -7,7 +7,7 @@ import '_/common/reset.scss';
 import 'github-markdown-css'
 ReactDOM.render(
 	<BrowserRouter>
-    	<App Router = {Router} />
+    	<App Router = {Router}/>
   	</BrowserRouter>,
 	document.getElementById('app')
 )

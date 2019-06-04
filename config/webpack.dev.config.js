@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const baseWebpackConfig = require('./webpack.base.config.js');
 const merge = require('webpack-merge');
+require('./watcher.js');//监听目录
 module.exports = merge(baseWebpackConfig,{
   entry: {
     app:'./doc/index.js',

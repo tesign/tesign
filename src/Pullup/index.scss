@@ -1,40 +1,40 @@
-.mask{
-	position:fixed;
-	top:0;
-	left:0;
-	right: 0;
-	bottom:0;
-	background:rgba(0,0,0,0.5);
-	z-index: 99;
-}
-.pullup{
-	position: absolute;
-	right: 0;
-	top:0;
-	width:400px;
-	height:100%;
-	border:1px solid black;
-	z-index:100;
-	animation:polldown .3s ease forwards;
-}
-.pullup.actived{
-	animation: pollup .3s ease forwards;
-}
+.mask{	
+	position:fixed;	
+	top:0;	
+	left:0;	
+	right: 0;	
+	bottom:0;	
+	background:rgba(0,0,0,0.5);	
+	z-index: 99;	
+}	
+.pullup{	
+	position: absolute;	
+	right: 0;	
+	top:0;	
+	width:400px;	
+	height:100%;	
+	border:1px solid black;	
+	z-index:100;	
+	animation:polldown .3s ease forwards;	
+}	
+.pullup.actived{	
+	animation: pollup .3s ease forwards;	
+}	
 
-@keyframes pollup{
-	0%{
-		right: -400px;
-	}
-	100%{
-		right: 0px;
-	}
-}
+ @keyframes pollup{	
+	0%{	
+		right: -400px;	
+	}	
+	100%{	
+		right: 0px;	
+	}	
+}	
 
-@keyframes polldown{
-	0%{
-		right:0px;
-	}
-	100%{
-		right:-400px;
-	}
-}
+ @keyframes polldown{	
+	0%{	
+		right:0px;	
+	}	
+	100%{	
+		right:-400px;	
+	}	
+} 
