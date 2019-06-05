@@ -7,10 +7,9 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import {ROUTERS} from './router.conf'
 import './reset.scss'
 import './App.scss';
-// const ROUTERS = require('./router.conf');
+const ROUTERS = require('./router.conf');
 export default class App extends React.Component {
     constructor(props){
         super(props);
