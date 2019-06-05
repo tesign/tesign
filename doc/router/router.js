@@ -10,6 +10,7 @@ import { Switch, Route } from 'react-router-dom';
 import {ROUTERS} from '_/common/router.conf'
 import Loadable from 'react-loadable';
 import Loading from '_/common/loading.jsx';
+// const ROUTERS = require('../../common/router.conf');
 export default class Router extends React.Component {
     constructor(props){
         super(props);

@@ -4,7 +4,6 @@
  * @author yupeng
  * @created: 2019/05/25
  */
-
 export const ROUTERS = [
     {
         link: '/',
@@ -22,3 +21,4 @@ export const ROUTERS = [
         road:'Pullup',
     }
 ];
+// module.exports = ROUTERS

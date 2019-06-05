@@ -1,19 +1,22 @@
 console.log('Watching dirs...');
+// const router = require('../common/router.conf.js');
 const { resolve } = require('path');
-const fs = require('fs');
+const {fs_readFile,fs_readdir,fs_writeFile} = require('./helper');
 const chokidar = require('chokidar');
 const basicRoot = resolve(__dirname,'../src/');
 const watcher = chokidar.watch(basicRoot,{
-	ignored: /(^|[\/\\])\../,
+	ignored: /(^|[\/\\])\../
 })
+//todo 这里需要先遍历src的目录文件，否则会导致rewrite重写
 watcher.on('addDir',(path)=>{
-	let routerName = path.split('/').pop(); //对应的文件夹名字
-	fs.writeFileSync(resolve(basicRoot,`${routerName}/index.jsx`),'',(err)=>{
-		console.log('创建成功');
+	const routerList = require('../common/router.conf.js');
+	let routerName = path.split('/').pop();
+	fs_readdir(basicRoot).then((fileArr)=>{
+		if(!fileArr.find((item,index)=> item == basicRoot)){
+			return Promise.All([fs_writeFile(resolve(basicRoot,`${routerName}/index.jsx`),''),fs_writeFile(resolve(basicRoot,`${routerName}/index.scss`),'')])
+		}//未找到相同文件时就写入
 	})
-	fs.writeFileSync(resolve(basicRoot,`${routerName}/index.scss`),'',(err)=>{
-		console.log('创建成功');
-	})
+	
 	
 })//添加目录时触发的事件
 
@@ -21,4 +24,4 @@ watcher.on('unlinkDir',(path)=>{
 
 })//删除目录时触发的事件
 
-module.exports = watcher
+module.exports = watcher;

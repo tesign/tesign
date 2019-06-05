@@ -6,7 +6,7 @@ example 也即测试存放点, yarn run examples的时候回请求这里面的�
 
 自动化构建思路
 每次在src目录下 新建一个文件夹 abc 就自动在abc文件下里面生成index.jsx 与 index.scss文件
-同时 由watcher监听到目录的变化，
+同时 由watcher监听到目录的变化,
 自动生成 common文件下的router.conf.js 文件
 自动生成 doc下docs的同名md文件
 自动生成 examples文件下 components目录下 新建abc文件夹 以此同时生成和src目录一样的index.jsx 与index.scss

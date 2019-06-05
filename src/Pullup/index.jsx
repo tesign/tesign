@@ -1,4 +1,4 @@
-mport React from 'react';	
+import React from 'react';	
 import {Button} from '@/Button'	
 import './index.scss'	
 class Pullup extends React.Component{	
