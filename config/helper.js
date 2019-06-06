@@ -1,7 +1,7 @@
 //常用的fs方法
 const Q = require('q');
 const fs = require('fs');
-
+const {join} = require('path');
 function fs_readFile(path){
 	var defer = Q.defer();
 	fs.readFile(path,function(err, data) {
@@ -59,6 +59,22 @@ function fs_mkdir(path,options = {},callback){
 	})
 	return defer.promise
 }
+async function fs_rmdirAll(path){
+	let files = fs.readdirSync(path);
+	if(files.length != 0){
+		files.map((item,index)=>{
+			let filePath = join(path,item);
+			if(fs.statSync(filePath).isDirectory()){
+				fs_rmdirAll(filePath)
+			}
+			else{
+				fs.unlinkSync(filePath,(err)=>{if(err){throw err}; console.log('文件已删除')})
+			}
+
+		})
+	}//还有文件时就递归进去
+    fs.rmdirSync(path);
+}
 function fs_rmdir(path,callback){
 	var defer = Q.defer();
 	fs.rmdir(path,(err)=>{
@@ -92,5 +108,6 @@ module.exports = {
 	fs_copyFile,
 	fs_mkdir,
 	fs_rmdir,
-	fs_rmFile
+	fs_rmFile,
+	fs_rmdirAll
 }

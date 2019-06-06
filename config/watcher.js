@@ -1,6 +1,7 @@
 console.log('Watching dirs...');
 const path = require('path');
-const {fs_readFile,fs_readdir,fs_writeFile,fs_copyFile,fs_mkdir,fs_rmdir,fs_rmFile} = require('./helper');
+const fs = require('fs');
+const {fs_readFile,fs_readdir,fs_writeFile,fs_copyFile,fs_mkdir,fs_rmdir,fs_rmFile,fs_rmdirAll} = require('./helper');
 const chokidar = require('chokidar');
 const basicRoot = resolve('/src/');
 const routerListSrc = resolve('/common/router.conf.js');
@@ -19,7 +20,15 @@ async function addFile(routerName){
 	await fs_mkdir(resolve('/examples/components/',routerName));//创建component下的文件夹
 	Promise.all([fs_writeFile(resolve('/examples/components/',routerName,'/index.jsx'),''),fs_writeFile(resolve('/examples/components/',routerName,'/index.scss'),''),fs_writeFile(resolve('/doc/docs/',`${routerName}.md`),''),fs_writeFile(routerListSrc,`module.exports=${JSON.stringify(routerList)}`)])
 }
-
+async function deleteFile(deleteRouter){
+	let routerList = require('../common/router.conf.js');
+	routerList = routerList.filter((item,index)=>{
+		return item.road != deleteRouter;
+	})
+	fs_rmFile(resolve('/doc/docs/',`${deleteRouter}.md`));
+	fs_rmdirAll(resolve('/examples/components',deleteRouter));
+	fs_writeFile(routerListSrc,`module.exports=${JSON.stringify(routerList)}`)
+}
 fs_readdir(basicRoot).then((fileArr)=>{
 	watcher.on('addDir',(path)=>{
 		let routerName = path.split('/').pop();
@@ -39,19 +48,12 @@ fs_readdir(basicRoot).then((fileArr)=>{
 
 watcher.on('unlinkDir',(path)=>{
 	const deleteRouter = path.split('/').pop();//删除的路由列表
-	let routerList = require('../common/router.conf.js');
-	routerList = routerList.filter((item,index)=>{
-		return item.road != deleteRouter;
-	})
-	fs_rmFile(resolve('/doc/docs/',`${deleteRouter}.md`))
-	// fs_rmdir(resolve('/examples/components/',deleteRouter))
-	// .catch((err)=>{
-	// 	console.log(err);
-	// })
-	//todo 这里要重写rmdir逻辑，因为不支持删除非空文件夹，得递归依次删除
-	fs_writeFile(routerListSrc,`module.exports=${JSON.stringify(routerList)}`)
+	deleteFile(deleteRouter)
 	.then(()=>{
-		console.log('路由列表重写成功')
+		console.log('删除目录成功,路由重写成功')
+	})
+	.catch((err)=>{
+		console.log(err);
 	})
 })//删除目录时触发的事件
 
