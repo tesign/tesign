@@ -46,9 +46,51 @@ function fs_copyFile(source,target,callback){
 	})
 	return defer.promise
 }
+function fs_mkdir(path,options = {},callback){
+	var defer = Q.defer();
+	fs.mkdir(path,options,(err)=>{
+		if(err){
+			defer.reject(err)
+		}
+		else{
+			callback && callback();
+			defer.resolve()
+		}
+	})
+	return defer.promise
+}
+function fs_rmdir(path,callback){
+	var defer = Q.defer();
+	fs.rmdir(path,(err)=>{
+		if(err){
+			defer.reject(err)
+		}
+		else{
+			callback && callback();
+			defer.resolve()
+		}
+	})
+	return defer.promise
+}
+function fs_rmFile(path,callback){
+	var defer = Q.defer();
+	fs.unlink(path,(err)=>{
+		if(err){
+			defer.reject(err)
+		}
+		else{
+			callback && callback();
+			defer.resolve()
+		}
+	})
+	return defer.promise
+}
 module.exports = {
 	fs_readFile,
 	fs_readdir,
 	fs_writeFile,
-	fs_copyFile
+	fs_copyFile,
+	fs_mkdir,
+	fs_rmdir,
+	fs_rmFile
 }
