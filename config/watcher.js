@@ -31,8 +31,8 @@ async function deleteFile(deleteRouter){
 }
 fs_readdir(basicRoot).then((fileArr)=>{
 	watcher.on('addDir',(path)=>{
-		let routerName = path.split('/').pop();
-		if(fileArr.indexOf(routerName) == -1){
+		let routerName = path.replace(/\\/g,"/").split('/').pop();//mac与windows斜杠不一样因此先转换
+		if(fileArr.indexOf(routerName) == -1 && routerName!=''){
 			addFile(routerName)
 			.then(()=>{
 				console.log('路由列表重写成功')
@@ -47,7 +47,7 @@ fs_readdir(basicRoot).then((fileArr)=>{
 })
 
 watcher.on('unlinkDir',(path)=>{
-	const deleteRouter = path.split('/').pop();//删除的路由列表
+	const deleteRouter = path.replace(/\\/g,"/").split('/').pop();//删除的路由列表
 	deleteFile(deleteRouter)
 	.then(()=>{
 		console.log('删除目录成功,路由重写成功')
