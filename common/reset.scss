@@ -61,3 +61,17 @@ a{
 input, textarea{
 	border: 1px solid #eee;
 }
+.markdown-body table{
+	td,th{
+		border-color:transparent !important;
+	}
+	thead,tr,td,th{
+		display: flex;
+		flex:1;
+		align-items: center;
+	}
+	tbody{
+		display: flex;
+		flex-direction: column;
+	}
+}

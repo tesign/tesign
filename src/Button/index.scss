@@ -1,17 +1,69 @@
-.mybutton{	
-	cursor: pointer;	
-	border: none;	
-	padding: 0 10px;	
-	min-width: 80px;	
-	height: 30px;	
-	line-height: 30px;	
-	border-radius: 5px;	
-	color: #fff;	
-}	
-.bu-normal{	
-	background: #1890ff;	
-}	
-.bu-inner{	
-	background:#e71a1a;	
-	border:1px solid #e71a1a;	
-} 
+.tes-btn{
+	cursor:pointer;
+	text-align: center;
+	font-weight: 400;
+	height: 32px;
+	user-select:none;
+	outline:none;
+	line-height:32px;
+	background:white;
+	border-radius:4px;
+	padding:0 4px;
+	box-sizing:border-box;
+	border:1px solid transparent;
+	border-color:#d9d9d9;
+	transition:all .3s ease;
+	text-decoration:none !important;
+}
+a.tes-btn{
+	color:#0366d6 !important;
+}
+.tes-btn-samll{
+	height: 24px;
+	line-height: 24px;
+}
+.tes-btn-normal{
+	height: 32px;
+	line-height:32px;
+}
+.tes-btn-large{
+	height: 40px;
+	line-height: 40px;
+}
+.tes-btn:focus,.tes-btn:hover{
+	color: #40a9ff;
+	border-color: #40a9ff;
+}
+.tes-btn-primary{
+	color:#fff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+.tes-btn-danger{
+	color:#cf1322;
+}
+.tes-btn.tes-btn-danger:focus,.tes-btn.tes-btn-danger:hover{
+    color: #fff;
+    background-color: #cf1322;
+    border-color: #cf1322;
+}
+.tes-btn.tes-btn-primary:focus,.tes-btn.tes-btn-primary:hover{
+    color: #fff;
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+}
+.tes-btn-block{
+	display: block;
+	width:100%;
+}
+.tes-btn-disabled{
+    color: rgba(0, 0, 0, 0.25);
+    background-color: #f5f5f5;
+    border-color: #d9d9d9;
+}
+.tes-btn.tes-btn-disabled:hover,.tes-btn.tes-btn-disabled:focus{
+	cursor:not-allowed;
+    color: rgba(0, 0, 0, 0.25);
+    background-color: #f5f5f5;
+    border-color: #d9d9d9;
+}
