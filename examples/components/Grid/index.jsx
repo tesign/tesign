@@ -14,7 +14,7 @@ class Grid extends React.Component{
 				  <Col span={8}>456</Col>
 				  <Col span={8}>789</Col>
 				</Row>
-			    <T.Row>
+			    <T.Row gutter= {12}>
 			    	<T.Col span = {12}>666</T.Col>
 			    	<T.Col span = {4}>123</T.Col>
 			    	<T.Col span = {8}>right</T.Col>

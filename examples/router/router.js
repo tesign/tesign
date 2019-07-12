@@ -19,8 +19,8 @@ export default class Router extends React.Component {
         return (
             <Switch>
                  {
-                    ROUTERS.map((item)=>{
-                        return <Route exact={item.link=='/'} path={item.link} 
+                    ROUTERS.map((item,index)=>{
+                        return <Route exact={item.link=='/'} path={item.link} key ={index}
                                 component = {item.road?Loadable({
                                     loader:()=>import('../components/' + item.road),
                                     loading:Loading
