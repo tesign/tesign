@@ -10,10 +10,10 @@ class MyButton extends React.Component{
 	render(){
 		return(	
 			<div>
-			<Button  size='large'>如果你看见我 说明你引用成功了，可以愉快的写数据测试了</Button>
+			<Button  size='small' block>如果你看见我 说明你引用成功了，可以愉快的写数据测试了</Button>
 				<div className="test">
 					<T.Button href='www.baidu.com' size='normal' block>123</T.Button>
-					<T.Button size='normal' block>123</T.Button>
+					<T.Button href='www.baidu.com' size='normal' block>123</T.Button>
 				</div>
 			</div>
 		)

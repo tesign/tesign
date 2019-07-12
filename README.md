@@ -17,6 +17,7 @@ example 也即测试存放点, yarn run examples的时候回请求这里面的�
 Src为组件存放地点，examples为引入Src组件的样例，doc为组件文档。
 预计支持组件
 
+修改。 组件开发页与文档编辑页是否可以同时挂载，通过不同路由进入，方便开发。
 + Button 按钮
 + Icon 图标
 
