@@ -19,9 +19,14 @@ class Button extends React.Component{
 			large:'tes-btn-large',
 		}	
 		const {type,size,disabled,block,href,className,style,children} = this.props;
-		const btn_show = disabled?'tes-btn-disabled':''	
-		const btn_block = block?'tes-btn-block':''
-		const btn_class = classnames('tes-btn',btn_size[size],btn_type[type],btn_show,btn_block,className)	
+		const btn_class = classnames({
+			'tes-btn':true,
+			'tes-btn-disabled':disabled,
+			'tes-btn-block':block,
+			[`${className}`]:className,
+			[`${btn_size[size]}`]:size,
+			[`${btn_type[type]}`]:type,
+		})
 		return(
 			href?
 			<a href={href} className = {btn_class} style = {style} onClick = {this.onClick}>{children}</a>

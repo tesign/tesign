@@ -9,15 +9,15 @@ class Grid extends React.Component{
 	render(){
 		return(
 			<div>
-				<Row gutter={8}>
+				<Row type='flex' justify="space-between" align="bottom" gutter={8}>
 				  <Col span={8}>123</Col>
 				  <Col span={8}>456</Col>
-				  <Col span={8}>789</Col>
+				  <Col span={8}><div>我的字体很大很大很大</div></Col>
 				</Row>
-			    <T.Row gutter= {12}>
+			    <T.Row gutter= {12} justify="space-between" align="bottom">
 			    	<T.Col span = {12}>666</T.Col>
-			    	<T.Col span = {4}>123</T.Col>
-			    	<T.Col span = {8}>right</T.Col>
+			    	<T.Col span = {0}>123</T.Col>
+			    	<T.Col span = {8}><div>我的字体很大很大很大</div></T.Col>
 			    </T.Row>
 
 			</div>

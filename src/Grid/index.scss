@@ -2,6 +2,33 @@
 	display: block;
 	position: relative;
 }
+.tes-row-flex{
+	display: flex;	
+}
+.tes-row-flex-space-between{
+	justify-content: space-between;
+}
+.tes-row-flex-start{
+	justify-content:flex-start;
+}
+.tes-row-flex-end{
+	justify-content: flex-end;
+}
+.tes-row-flex-center{
+	justify-content: center;
+}
+.tes-row-flex-space-around{
+	justify-content: space-around;
+}
+.tes-row-flex-top{
+	align-items: flex-start;
+}
+.tes-row-flex-middle{
+	align-items: center;
+}
+.tes-row-flex-bottom{
+	align-items: flex-end;
+}
 .tes-row:after{
 	content:'';
 	display: block;

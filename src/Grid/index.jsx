@@ -10,9 +10,17 @@ function Col(props){
 }
 
 function Row(props){
-	let {children,className,gutter} = props;
-	let row_className = classnames('tes-row',className);
+	let {children,className,gutter,type,align,justify} = props;
+
+	let row_className = classnames({
+		'tes-row':true,
+		'tes-row-flex':align || justify,
+		[`${className}`]:className,
+		[`tes-row-flex-${justify}`]:justify,
+		[`tes-row-flex-${align}`]:align,
+	});
 	let row_style;
+
 	if(gutter){
 		let row_margin = -gutter/2;
 		let row_style = {marginLeft:row_margin + 'px',marginRight:row_margin + 'px'};
