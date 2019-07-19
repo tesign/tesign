@@ -2,22 +2,28 @@ import React from 'react';
 import './index.scss';
 import classnames from 'classnames';
 function Col(props){
-	let {span,children,className,style} = props;
-	let col_className = classnames('tes-col','tes-col-' + span,className);
+	let {span,children,className,style,offset} = props;
+	let col_className = classnames({
+		'tes-col':true,
+		[`tes-col-${span}`]:span,
+		[`tes-col-offset-${offset}`]:offset,
+		[`${className}`]:className
+	})
 	return(
 		<div className = {col_className} style = {style}>{children}</div>
 	)
 }
 
 function Row(props){
-	let {children,className,gutter,type,align,justify} = props;
+	let {children,className,gutter,type,align,justify,direction,wrap} = props;
 
 	let row_className = classnames({
 		'tes-row':true,
 		'tes-row-flex':align || justify,
-		[`${className}`]:className,
+		[`tes-row-flex-${direction}`]:direction,
 		[`tes-row-flex-${justify}`]:justify,
 		[`tes-row-flex-${align}`]:align,
+		[`${className}`]:className,
 	});
 	let row_style;
 
